@@ -16,16 +16,16 @@ Route::get('/', function () {
 });
 
 // Authentication routes...
-Route::get('auth/login', 'Auth\AuthController@getLogin');
-Route::post('auth/login', 'Auth\AuthController@postLogin');
-Route::get('auth/logout', 'Auth\AuthController@getLogout');
+Route::get('auth/login', 'Auth\AuthController@getLogin')->name('auth.login');
+Route::post('auth/login', 'Auth\AuthController@postLogin')->name('auth.login');
+Route::get('auth/logout', 'Auth\AuthController@getLogout')->name('auth.logout');
 
 // Registration routes...
-Route::get('auth/register', 'Auth\AuthController@getRegister');
-Route::post('auth/register', 'Auth\AuthController@postRegister');
+Route::get('auth/register', 'Auth\AuthController@getRegister')->name('auth.register');
+Route::post('auth/register', 'Auth\AuthController@postRegister')->name('auth.register');
 
 Route::group(['middleware' => 'auth'], function(){
   Route::get('dashboard', function(){
     return "Hi";
-  });
+  })->name('dashboard');
 });
