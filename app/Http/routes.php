@@ -12,7 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    if(Auth::guest())
+      return redirect()->route('auth.login');
+    else
+      return redirect()->route('dashboard');
 });
 
 // Authentication routes...
