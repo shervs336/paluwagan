@@ -1,29 +1,40 @@
-<!-- resources/views/auth/register.blade.php -->
+@extends('layout.app')
 
-<form method="POST" action="/auth/register">
-    {!! csrf_field() !!}
+@section('content')
+  <!-- resources/views/auth/register.blade.php -->
+  <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h1 class="text-center">Paluwagan 2018</h1>
+        <br />
+        <div class="well">
+          <form method="POST" action="/auth/register">
+              {!! csrf_field() !!}
 
-    <div>
-        Name
-        <input type="text" name="name" value="{{ old('name') }}">
+              <div class="form-group">
+                  <label>Name</label>
+                  <input type="text" name="name" class="form-control" value="{{ old('name') }}">
+              </div>
+
+              <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" name="email" class="form-control" value="{{ old('email') }}">
+              </div>
+
+              <div class="form-group">
+                  <label>Password</label>
+                  <input type="password" name="password" class="form-control">
+              </div>
+
+              <div class="form-group">
+                  <label>Confirm Password</label>
+                  <input type="password" name="password_confirmation" class="form-control">
+              </div>
+
+              <div>
+                  <button type="submit" class="btn btn-default">Register</button>
+              </div>
+          </form>
+        </div>
+      </div>
     </div>
-
-    <div>
-        Email
-        <input type="email" name="email" value="{{ old('email') }}">
-    </div>
-
-    <div>
-        Password
-        <input type="password" name="password">
-    </div>
-
-    <div>
-        Confirm Password
-        <input type="password" name="password_confirmation">
-    </div>
-
-    <div>
-        <button type="submit">Register</button>
-    </div>
-</form>
+@endsection
