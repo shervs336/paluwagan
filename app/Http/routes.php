@@ -25,7 +25,5 @@ Route::get('auth/register', 'Auth\AuthController@getRegister')->name('auth.regis
 Route::post('auth/register', 'Auth\AuthController@postRegister')->name('auth.register');
 
 Route::group(['middleware' => 'auth'], function(){
-  Route::get('dashboard', function(){
-    return "Hi";
-  })->name('dashboard');
+  Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 });
