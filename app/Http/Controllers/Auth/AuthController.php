@@ -53,7 +53,7 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'username' => 'required|username|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
         ]);
     }
@@ -68,8 +68,19 @@ class AuthController extends Controller
     {
         return User::create([
             'name' => $data['name'],
-            'email' => $data['email'],
+            'username' => $data['username'],
             'password' => bcrypt($data['password']),
         ]);
     }
+
+    /**
+     * Use username as way to login.
+     *
+     * @return String username
+     */
+    protected function loginUsername()
+    {
+      return 'username';
+    }
+
 }
