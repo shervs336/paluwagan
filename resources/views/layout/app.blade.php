@@ -7,8 +7,8 @@
 
         <title>Sta Maria. Paluwagan 2018</title>
 
-        <link rel="stylesheet" href="https://bootswatch.com/3/flatly/bootstrap.min.css">
-
+        <link rel="stylesheet" href="https://bootswatch.com/3/flatly/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     </head>
     <body>
 
@@ -46,9 +46,10 @@
               -->
             <ul class="nav navbar-nav navbar-right">
               @if(Auth::guest())
-                <li><a href="{{ route('auth.login') }}">Login</a></li>
+                <li><a href="{{ route('auth.login') }}"><i class="fa fa-user fa-fw"></i> Login</a></li>
               @else
-                <li><a href="{{ route('auth.logout') }}">Logout</a></li>
+                <li><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a></li>
+                <li><a href="{{ route('auth.logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
               @endif
             </ul>
 
