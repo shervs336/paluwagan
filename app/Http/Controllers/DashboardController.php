@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Member;
+use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -17,9 +17,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $members = Member::all();
+        $users = User::all();
 
-        return view('dashboard', ['members' => $members]);
+        return view('dashboard', ['users' => $users]);
     }
 
     /**

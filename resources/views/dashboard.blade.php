@@ -1,6 +1,8 @@
 @extends('layout.app')
 
 @section('content')
+    @include('flash::message')
+
     <div class="row">
       <div class="col-md-6">
         <div class="panel panel-success">
@@ -17,10 +19,10 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach($members as $member)
+                  @foreach($users as $user)
                     <tr>
-                      <td>{{ $member->id }}</td>
-                      <td>{{ $member->nickname }}</td>
+                      <td>{{ $user->id }}</td>
+                      <td>{{ $user->username }}</td>
                     </tr>
                   @endforeach
                 </tbody>
