@@ -2,6 +2,8 @@
 
 @section('content')
   <!-- resources/views/auth/login.blade.php -->
+  @include('flash::message')
+
   <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1 class="text-center">Paluwagan 2018</h1>
