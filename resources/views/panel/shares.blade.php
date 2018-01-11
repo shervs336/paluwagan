@@ -35,7 +35,7 @@
                           @if(Request::is('shares/manage/*') || Request::is('shares/manage'))
                             <td><input type="number" name="amount[{{ $user->id }}][{{ $share->month }}]" class="form-control input-sm no-block" value="{{ $share->amount }}"></td>
                           @else
-                            <td>{{ $share->amount }}</td>
+                            <td>{{ $share->amount > 0.00 ? $share->amount : '-' }}</td>
                           @endif
                         @endforeach
                         @if($user->shares->count() == 0)
@@ -47,7 +47,7 @@
                             @endif
                           @endfor
                         @endif
-                      <td>{{ number_format($user->shares->sum('amount'), 2, '.', ',') }}</td>
+                      <td>{{ $user->shares->sum('amount') > 0 ? number_format($user->shares->sum('amount'), 2, '.', ',') : '-' }}</td>
                     </tr>
                   @endforeach
               </tbody>
