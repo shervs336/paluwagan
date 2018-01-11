@@ -9,7 +9,50 @@
 
         <link rel="stylesheet" href="https://bootswatch.com/3/flatly/bootstrap.min.css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" />
+        <!--<link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" />-->
+        <style>
+        input.no-block{
+          width: 135px;
+        }
+
+        .profile-pic
+        {
+          width: 250px;
+          height: 250px;
+          margin: 0 auto;
+        }
+
+        .caption div {
+            box-shadow: 0 0 5px #C8C8C8;
+            transition: all 0.3s ease 0s;
+        }
+        .img-circle {
+            border-radius: 50%;
+        }
+        .img-circle {
+            border-radius: 0;
+        }
+
+        .ratio {
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            height: 0;
+            padding-bottom: 100%;
+            position: relative;
+            width: 100%;
+        }
+        .img-circle {
+            border-radius: 50%;
+        }
+        .img-responsive {
+            display: block;
+            height: auto;
+            max-width: 100%;
+        }
+
+        </style>
     </head>
     <body>
 
