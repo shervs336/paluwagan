@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\User;
+use App\Share;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -17,9 +18,14 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::with(['shares' => function($query){
+          $query->orderBy('month');
+        }])->get();
 
-        return view('dashboard', ['users' => $users]);
+        return view('dashboard', [
+          'users' => $users,
+          'sharesGrandTotal' => Share::sum('amount')
+        ]);
     }
 
     /**

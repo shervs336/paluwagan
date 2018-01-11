@@ -27,6 +27,12 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout')->name('auth.logout');
 Route::get('auth/register', 'Auth\AuthController@getRegister')->name('auth.register');
 Route::post('auth/register', 'Auth\AuthController@postRegister')->name('auth.register');
 
-Route::group(['middleware' => 'auth'], function(){
+Route::group(['middleware' => ['auth']], function(){
   Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+  Route::get('shares', 'SharesController@index')->name('shares');
+});
+
+Route::group(['middleware' => ['auth', 'is.admin']], function(){
+  Route::get('shares/manage', 'SharesController@manage')->name('shares.manage');
+  Route::post('shares/manage', 'SharesController@save')->name('shares.manage');
 });

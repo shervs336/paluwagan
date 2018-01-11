@@ -9,6 +9,7 @@
 
         <link rel="stylesheet" href="https://bootswatch.com/3/flatly/bootstrap.min.css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     </head>
     <body>
 
@@ -49,6 +50,7 @@
                 <li><a href="{{ route('auth.login') }}"><i class="fa fa-user fa-fw"></i> Login</a></li>
               @else
                 <li><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a></li>
+                <li><a href="{{ route('shares.manage') }}"><i class="fa fa-money fa-fw"></i> Shares</a></li>
                 <li><a href="{{ route('auth.logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
               @endif
             </ul>
