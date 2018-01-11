@@ -1,9 +1,20 @@
-@extends('layout.app')
+  @extends('layout.app')
 
 @section('content')
     @include('flash::message')
 
-    @include('panel.cycle')
+    <div class="row">
+      <div class="col-md-6">
+        @include('panel.account-summary')
+      </div>
+      <div class="col-md-6">
+        @include('panel.cycle')
+      </div>
+    </div>
 
-    @include('panel.shares')
+    <div class="row">
+      <div class="col-md-12">
+        @include('panel.shares')
+      </div>
+    </div>
 @endsection

@@ -51,6 +51,7 @@
               @else
                 <li><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a></li>
                 <li><a href="{{ route('shares.manage') }}"><i class="fa fa-money fa-fw"></i> Shares</a></li>
+                <li><a href="{{ route('profile.show', ['id' => Auth::user()->id]) }}"><i class="fa fa-user-circle fa-fw"></i> Profile</a></li>
                 <li><a href="{{ route('auth.logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
               @endif
             </ul>

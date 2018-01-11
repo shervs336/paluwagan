@@ -30,6 +30,8 @@ Route::post('auth/register', 'Auth\AuthController@postRegister')->name('auth.reg
 Route::group(['middleware' => ['auth']], function(){
   Route::get('dashboard', 'DashboardController@index')->name('dashboard');
   Route::get('shares', 'SharesController@index')->name('shares');
+  Route::get('profile/image/{id}', 'ProfileController@image')->name('profile.image');
+  Route::resource('profile', 'ProfileController');
 });
 
 Route::group(['middleware' => ['auth', 'is.admin']], function(){

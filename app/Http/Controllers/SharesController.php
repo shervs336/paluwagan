@@ -46,6 +46,8 @@ class SharesController extends Controller
           }
         }
 
+        flash('Shares successfully saved!')->success();
+
         return redirect()->route('dashboard');
     }
 
